@@ -1,0 +1,16 @@
+{% extends "publicnotices/base.html" %}
+
+{% block content %}
+
+	<p>Notices</p>
+
+	<ul>
+		{% for publicnotice in publicnotices %}
+			<li>{{ publicnotice }}</li>
+		{% empty %}
+			<li>No notices have been added yet.</li>
+		{% endfor %}
+	</ul>
+	<a href="{% url 'publicnotices:new_publicnotice' %}">Add a new public notice</a>
+
+{% endblock content %}

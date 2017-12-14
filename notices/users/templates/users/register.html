@@ -1,0 +1,12 @@
+{% extends "publicnotices/base.html" %}
+{% block content %}
+
+	
+	<form method="post" action="{%url 'users:register' %}">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<button name="Submit">Register</button>
+	<input type="hidden" name="{% url 'publicnotices:index' %}" />
+	</form>
+{% endblock content %}

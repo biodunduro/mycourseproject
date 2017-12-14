@@ -1,0 +1,36 @@
+{% extends 'publicnotices/base.html' %}
+
+
+{% block content %}
+  
+  <p>Notice: {{ notice }}</p>
+
+  <p>Entries:</p>
+  <ul>
+  {% for entry in entries %}
+  	<li>
+  		<p> {{ entry.date_added }}</p>
+  		<p> {{ entry.text|linebreaks }}</p>
+      
+  	</li>
+  {% empty %}
+  	<li>
+  		There are no entries for the notice yet.
+  	</li>
+  {% endfor %}
+  </ul>
+<!-- 
+  
+
+  <p><strong>Title:</strong> <a href="{% url 'publicnotice' publicnotice.id %}">{{ publicnotice.title }}</p>
+  <p><strong>Category:</strong> {{ publicnotice.category }}</p> 
+  <p><strong>Body:</strong> {{ publicnotice.body }}</p>
+  <p><strong>Posted By:</strong> {{ publicnotice.posted_by }}</p> 
+  <p><strong>Date Posted:</strong> {{ publicnotice.date_posted }}</p>
+  <p><strong>Advertiser:</strong> {{ publicnotice.advertiser}}</p>
+
+ -->
+
+
+{% endblock %}
+

@@ -1,0 +1,11 @@
+{% extends "publicnotices/base.html" %}
+
+{% block content %}
+  <p>Add a new publicnotice:</p>
+  <form action="{% url 'publicnotices:new_publicnotice' %}" method='post'>
+  	{% csrf_token %}
+  	{{ form.as_p }}
+  	<button name="submit">Add Notice</button>
+  	
+  </form>
+{% endblock content %}

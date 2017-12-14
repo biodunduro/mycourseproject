@@ -1,0 +1,17 @@
+{% extends "publicnotices/base.html" %}
+{% block header %}
+	<div calss='jumbotron'>
+		<h1>Don't miss a public notice</h1>
+	</div>
+{% endblock header %}
+
+{% block content %}
+
+	<h2>
+		Notices inform the public about Changes of Name, Caveats, Notices of AGM, Notices of Tender, ect.
+	</h2>
+	<h2>
+		<a href="{% url 'users:register' %}">Register an account</a> to post your own Public Notice.
+	</h2>
+	
+{% endblock content %}
